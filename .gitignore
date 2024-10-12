@@ -4,3 +4,4 @@
 venv-main
 .env
 .coverage
+.DS_Store
