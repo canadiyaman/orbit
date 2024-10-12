@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-(gq5_y(ef@f!hl&v9*+t=gxpqh!$#&87jz8k^)kn*67dlhk3p6")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
@@ -80,7 +80,7 @@ WSGI_APPLICATION = "orbit.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("DB_ENGINE", "django.db.backends.postgresql_psycopg2"),
+        "ENGINE": os.environ.get("DB_ENGINE", "django.db.backends.sqlite3"),
         "NAME": os.environ.get("DB_NAME", BASE_DIR / "db.sqlite3"),
         "USER": os.environ.get("DB_USER", "orbit"),
         "PASSWORD": os.environ.get("DB_PASSWORD", "orbit"),

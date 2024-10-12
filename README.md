@@ -13,6 +13,8 @@
 
 > [Click](https://www.postman.com/leepower/workspace/orbit/collection/2053445-b5be6e76-8be9-42c7-b509-6d47b3f0caae?action=share&creator=2053445) link to see online postman collection 
 
+> It's on live -> [https://canadiyaman.pythonanywhere.com/](https://canadiyaman.pythonanywhere.com/)
+
 Installation
 ================
 
@@ -122,3 +124,24 @@ Development
     black .
     flake8 .
     ```
+
+Production
+================
+- Create a path to the server and clone project via github. (You may need to add new ssh key to get repository. [Please follow for more information](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux) )
+    ```properties
+        git clone git@github.com:canadiyaman/orbit.git
+    ```
+- Install Requirements.
+    ```properties
+        pip install -r requirements
+    ```
+- Set .env and variables
+    ```properties
+        cp .env-example .env
+        nano .env
+    ```
+- Run migrations
+    ```properties
+        python manage.py migrate
+    ```
+- Re-start the server (It depends which host you use)
